@@ -1,23 +1,23 @@
 #include <iostream>
 #include <string>
 
-class jocuri {
-    std::string name, genre;
-    float price, size, patch; //Pret in lei si dimensiunea in GB
+class joc {
+    std::string name, genre, patch;
+    float price, size; //Pret in RON si dimensiunea in GB
     int release_year, downloads;
 
 public:
 
     //Constructorul fara parametri
-    jocuri() : name("?"), genre("game"), price(0), size(0), patch(0), release_year(0), downloads(0) {}
+    joc() : name("?"), genre("game"), price(0), size(0), patch("0"), release_year(0), downloads(0) {}
 
     //Constructorul cu parametri
-    jocuri(const std::string &name, const std::string &genre, float price, float size, float patch, int releaseYear,
-           int downloads) : name(name), genre(genre), price(price), size(size), patch(patch), release_year(releaseYear),
-                            downloads(downloads) {}
+    joc(const std::string &name, const std::string &genre, const std::string &patch, float price, float size,
+        int releaseYear, int downloads) : name(name), genre(genre), patch(patch), price(price), size(size),
+                                             release_year(releaseYear), downloads(downloads) {}
 
     //Constructorul de copiere
-    jocuri(const jocuri& copie) {
+    joc(const joc& copie) {
         this->name = copie.name;
         this->downloads = copie.downloads;
         this->release_year = copie.release_year;
@@ -28,11 +28,11 @@ public:
     }
 
     //Destructor
-    ~jocuri()
+    ~joc()
     {}
 
     //Operatorul egal
-    jocuri& operator=(const jocuri& copie){
+    joc& operator=(const joc& copie){
         this->name = copie.name;
         this->downloads = copie.downloads;
         this->release_year = copie.release_year;
@@ -44,7 +44,7 @@ public:
     }
 
     //Stream output detector
-    friend std::ostream &operator<<(std::ostream &os, const jocuri &jocuri) {
+    friend std::ostream &operator<<(std::ostream &os, const joc &jocuri) {
         os << "name: " << jocuri.name << " genre: " << jocuri.genre << " price: " << jocuri.price << " size: "
            << jocuri.size << " patch: " << jocuri.patch << " release_year: " << jocuri.release_year << " downloads: "
            << jocuri.downloads << std::endl;
@@ -55,7 +55,7 @@ public:
         this->price = this->price - ((procent_reducere/100) * this->price);
         std::cout<<this->name<<" costa doar: "<<this->price<<"RON"<<std::endl;
     }
-    void actualizare(float dimensiune,float versiune){
+    void actualizare(float dimensiune,std::string versiune){
         this->size = this->size + dimensiune;
         this->patch = versiune;
         std::cout<<"Noul update adduce versiunea: "<<this->patch<<". De descarcat: "<<dimensiune<<" GB"<<std::endl;
@@ -63,7 +63,7 @@ public:
 };
 
 
-class utilizatori{
+class utilizator{
     std::string username, bio;
     float balance;
     int games_owned;
@@ -71,14 +71,14 @@ class utilizatori{
 public:
 
     //Constructorul fara parametri
-    utilizatori() :username("Player"), bio("-"), balance(0), games_owned(0) {}
+    utilizator() : username("Player"), bio("-"), balance(0), games_owned(0) {}
 
     //Constructorul cu parametri
-    utilizatori(const std::string &username, const std::string &bio, float balance, int gamesOwned)
+    utilizator(const std::string &username, const std::string &bio, float balance, int gamesOwned)
             : username(username), bio(bio), balance(balance), games_owned(gamesOwned) {}
 
     //Stream output detector
-    friend std::ostream &operator<<(std::ostream &os, const utilizatori &utilizatori) {
+    friend std::ostream &operator<<(std::ostream &os, const utilizator &utilizatori) {
         os << "username: " << utilizatori.username << " bio: " << utilizatori.bio << " balance: " << utilizatori.balance
            << " games_owned: " << utilizatori.games_owned << std::endl;
         return os;
@@ -117,19 +117,19 @@ public:
 int main()
 {
 
-jocuri joc1;
+joc joc1;
 std::cout<<joc1;
-jocuri Minecraft("Minecraft","Sandbox",115,1.1,1.17,2011,0);
-jocuri joc3(Minecraft);
-jocuri joc2;
+joc Minecraft("Minecraft", "Sandbox", "1.17",115,1.2,2011,0 );
+joc joc3(Minecraft);
+joc joc2;
 joc2 = joc3;
 std::cout<<joc3;
 Minecraft.sale(30);
-Minecraft.actualizare(0.12,1.173);
+Minecraft.actualizare(0.12,"1.173");
 
-utilizatori P1;
+utilizator P1;
 std::cout<< P1;
-utilizatori P2("Augustin","-",100,0);
+utilizator P2("Augustin", "-", 100, 0);
 std::cout<<P2;
 P2.schimbare_nume("Aug","Hello world!");
 std::cout<<P2;
@@ -137,5 +137,6 @@ std::cout<<P2;
 DLC dlc1;
 std::cout<<dlc1;
 DLC dlc2("world","Minecraft",25,0);
+DLC dlc3;
     return 0;
 }
