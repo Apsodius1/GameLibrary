@@ -15,19 +15,19 @@
 
 #### Cerințe
 - [x] definirea a minim 3 clase
-  - [ ] <clasa 1>
-  - [ ] <clasa 2>
-  - [ ] <clasa 3>
-- [ ] constructori de inițializare
-- [ ] constructor de copiere sau cc (pt minim o clasă)
-- [ ] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
-- [ ] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
-- [ ] `operator<<` pt toate clasele
-- [ ] cât mai multe `const`
-- [ ] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
-  - [ ] <prima funcționalitate>
-  - [ ] <a doua funcționalitate>
-- [ ] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
+  - [x] <clasa 1>
+  - [x] <clasa 2>
+  - [x] <clasa 3>
+- [x] constructori de inițializare
+- [x] constructor de copiere sau cc (pt minim o clasă)
+- [x] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
+- [x] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
+- [x] `operator<<` pt toate clasele
+- [x] cât mai multe `const`
+- [x] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
+  - [x] <prima funcționalitate>
+  - [x] <a doua funcționalitate>
+- [x] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
 - [ ] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
 - [ ] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
 
