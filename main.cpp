@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 class joc {
     std::string name, genre, patch;
@@ -66,7 +67,7 @@ public:
 class utilizator{
     std::string username, bio;
     float balance;
-    int games_owned;
+   std::vector<joc> games_owned;
 
 public:
 
@@ -78,11 +79,12 @@ public:
             : username(username), bio(bio), balance(balance), games_owned(gamesOwned) {}
 
     //Stream output detector
-    friend std::ostream &operator<<(std::ostream &os, const utilizator &utilizatori) {
-        os << "username: " << utilizatori.username << " bio: " << utilizatori.bio << " balance: " << utilizatori.balance
-           << " games_owned: " << utilizatori.games_owned << std::endl;
+    friend std::ostream &operator<<(std::ostream &os, const utilizator &utilizator) {
+        os << "username: " << utilizator.username << " bio: " << utilizator.bio << " balance: " << utilizator.balance
+           << "number games_owned: " << utilizator.games_owned.size();
         return os;
     }
+
     void schimbare_nume(std::string nume,std::string bio2){
         this->username = nume;
         this->bio = bio2;
