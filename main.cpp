@@ -36,7 +36,7 @@ public:
     int game_id;
 
     //Constructorul fara parametri
-    joc() : name("?"), genre("game"), price(0), size(0), patch("0"), release_year(0), downloads(0) {}
+    joc() : name("?"), genre("game"), price(0), size(0), patch("0"), release_year(0), downloads(0), game_id(-1) {}
 
     //Constructorul cu parametri
     joc(const std::string &name, const std::string &genre, const std::string &patch, float size, int releaseYear,
