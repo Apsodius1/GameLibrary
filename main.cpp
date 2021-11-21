@@ -135,8 +135,6 @@ public:
 
 int main() {
 
-    joc joc1;
-    std::cout << joc1;
     joc Minecraft("Minecraft", "Sandbox", "1.17", 1.2, 2011, 2011, 115, 1);
     joc joc3(Minecraft);
     joc joc2;
