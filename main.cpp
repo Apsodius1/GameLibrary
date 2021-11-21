@@ -39,10 +39,10 @@ public:
     joc() : name("?"), genre("game"), price(0), size(0), patch("0"), release_year(0), downloads(0) {}
 
     //Constructorul cu parametri
-    joc(const std::string &name, const std::string &genre, const std::string &patch, float price, float size,
-        int releaseYear, int downloads, int game_id) : name(name), genre(genre), patch(patch), price(price), size(size),
-                                                       release_year(releaseYear), downloads(downloads),
-                                                       game_id(game_id) {}
+    joc(const std::string &name, const std::string &genre, const std::string &patch, float size, int releaseYear,
+        int downloads, float price, int gameId) : name(name), genre(genre), patch(patch), size(size),
+                                                  release_year(releaseYear), downloads(downloads), price(price),
+                                                  game_id(gameId) {}
 
     //Constructorul de copiere
     joc(const joc &copie) {
@@ -75,7 +75,7 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const joc &joc) {
         os << "name: " << joc.name << " genre: " << joc.genre << " patch: " << joc.patch << " price: " << joc.price
            << " size: " << joc.size << " release_year: " << joc.release_year << " downloads: " << joc.downloads
-           << " game_id: " << joc.game_id;
+           << " game_id: " << joc.game_id << std::endl;
         return os;
     }
 
@@ -133,12 +133,11 @@ public:
     }
 };
 
-
 int main() {
 
     joc joc1;
     std::cout << joc1;
-    joc Minecraft("Minecraft", "Sandbox", "1.17", 115, 1.2, 2011, 0, 1);
+    joc Minecraft("Minecraft", "Sandbox", "1.17", 1.2, 2011, 2011, 115, 1);
     joc joc3(Minecraft);
     joc joc2;
     joc2 = joc3;
