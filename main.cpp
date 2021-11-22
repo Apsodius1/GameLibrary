@@ -29,8 +29,9 @@ class joc {
     std::string name, genre, patch;
     float size; //Pret in RON si dimensiunea in GB
     int release_year, downloads;
-
+    std::vector<DLC> extensii;
 public:
+
 
     float price;
     int game_id;
