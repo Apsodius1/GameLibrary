@@ -39,7 +39,7 @@
 - săptămâna 9 (4 decembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [ ] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
+- [x] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
 - [ ] moșteniri
   - [ ] funcții virtuale (pure)
   - [ ] apelarea constructorului din clasa de bază 
