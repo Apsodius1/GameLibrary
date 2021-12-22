@@ -20,7 +20,7 @@ public:
     utilizator();
 
     //Constructorul cu parametri
-    utilizator(const std::string &username, const std::string &bio, float balance, int gamesOwned);
+    utilizator(std::string username, std::string bio, float balance, int gamesOwned);
 
     //Stream output detector
     friend std::ostream &operator<<(std::ostream &os, const utilizator &utilizator);

@@ -4,10 +4,14 @@
 
 #include "utilizator.h"
 
+
+
+
+
 utilizator::utilizator() : username("Player"), bio("-"), balance(0), games_owned(0) {}
 
-utilizator::utilizator(const std::string &username, const std::string &bio, float balance, int gamesOwned)
-        : username(username), bio(bio), balance(balance), games_owned(gamesOwned) {}
+utilizator::utilizator(std::string username, std::string bio, float balance, int gamesOwned)
+        : username(std::move(username)), bio(std::move(bio)), balance(balance), games_owned(gamesOwned) {}
 
 std::ostream &operator<<(std::ostream &os, const utilizator &utilizator) {
     os << "username: " << utilizator.username << " bio: " << utilizator.bio << " balance: " << utilizator.balance
@@ -16,8 +20,8 @@ std::ostream &operator<<(std::ostream &os, const utilizator &utilizator) {
 }
 
 void utilizator::schimbare_nume(std::string nume, std::string bio2) {
-    this->username = nume;
-    this->bio = bio2;
+    this->username = std::move(nume);
+    this->bio = std::move(bio2);
 
 }
 
