@@ -15,15 +15,13 @@ class joc {
     float size; //Pret in RON si dimensiunea in GB
     int release_year, downloads;
     std::vector<DLC> extensii;
-public:
-
-
     float price;
     int game_id;
+public:
 
+    friend class utilizator;
     //Constructorul fara parametri
     joc();
-
 
     //Constructorul cu parametri
     joc(const std::string &name, const std::string &genre, const std::string &patch, float size, int releaseYear,

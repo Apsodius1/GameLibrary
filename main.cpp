@@ -12,8 +12,11 @@ int main() {
     joc TFM("TeamFight Manager", "Strategy", "1.4.5", 0.3, 2020, 25000, 35, 4);
     joc ETG("Enter the Gungeon", "Bullet hell", "2.1.92", 2, 2016, 340000, 33, 5);
 
+    joc *ptr;
+
     Minecraft.sale(30);
     Minecraft.actualizare(0.12, "1.173");
+    std::cout<<Minecraft;
     RL.sale(100);
     std::cout<<RL;
 
@@ -28,7 +31,8 @@ int main() {
     utilizator P2("Augustin", "-", 100, 0);
     std::cout << P2;
     P2.schimbare_nume("Aug", "Hello world!");
-    P2.cumparare_joc(Minecraft.game_id, Minecraft.price);
+
+    P2.cumparare_joc(Minecraft);
     std::cout << P2;
 
     DLC dlc1;

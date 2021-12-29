@@ -25,10 +25,10 @@ void utilizator::schimbare_nume(std::string nume, std::string bio2) {
 
 }
 
-void utilizator::cumparare_joc(int game_id, float price) {
-    if (this->balance > price || this->balance == price) {
-        this->games_owned.emplace_back(game_id);
-        this->balance = this->balance - price;
+void utilizator::cumparare_joc(joc& x) {
+    if (this->balance > x.price || this->balance == x.price) {
+        this->games_owned.emplace_back(x.game_id);
+        this->balance = this->balance - x.price;
     }
 
 }

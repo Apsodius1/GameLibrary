@@ -27,7 +27,7 @@ public:
 
     void schimbare_nume(std::string nume, std::string bio2);
 
-    void cumparare_joc(int game_id, float price);
+    void cumparare_joc(joc &x);
 };
 
 
