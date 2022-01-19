@@ -8,6 +8,7 @@
 
 #include <string>
 #include <iostream>
+#include <memory>
 
 class DLC {
     std::string nume_dlc;
@@ -16,8 +17,12 @@ class DLC {
 
 public:
 
+    virtual std::shared_ptr<DLC> clone() const;
+
     //Constructorul fara parametri
     DLC();
+
+    virtual ~DLC();
 
     //Constructorul cu parametri
     DLC(const std::string &numeDlc, float pret, int nrDescarcari);
@@ -25,6 +30,7 @@ public:
     //Stream output detector
     friend std::ostream &operator<<(std::ostream &os, const DLC &dlc);
 
+    virtual void inflatie(float valoare_inflatie);
 
 };
 

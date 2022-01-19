@@ -4,12 +4,14 @@
 
 #include "joc.h"
 
+int joc::game_idmax = 0;
+
 joc::joc() : name("?"), genre("game"), price(0), size(0), patch("0"), release_year(0), downloads(0), game_id(-1) {}
 
 joc::joc(const std::string &name, const std::string &genre, const std::string &patch, float size, int releaseYear,
-         int downloads, float price, int gameId) : name(name), genre(genre), patch(patch), size(size),
-                                                   release_year(releaseYear), downloads(downloads), price(price),
-                                                   game_id(gameId) {}
+         int downloads, float price) : name(name), genre(genre), patch(patch), size(size),
+                                       release_year(releaseYear), downloads(downloads), price(price),
+                                       game_id(game_idmax) { game_idmax++; }
 
 joc::joc(const joc &copie) {
     this->name = copie.name;
@@ -22,7 +24,6 @@ joc::joc(const joc &copie) {
     this->game_id = copie.game_id;
 }
 
-joc::~joc() {}
 
 joc &joc::operator=(const joc &copie) {
     this->name = copie.name;
@@ -56,5 +57,25 @@ void joc::actualizare(float dimensiune, std::string versiune) {
 }
 
 joc::joc(int i) {
+
+}
+
+float joc::getPrice() const {
+    return price;
+}
+
+int joc::getGameId() const {
+    return game_id;
+}
+
+std::shared_ptr<joc> joc::clone() const {
+    return std::make_shared<joc>(*this);
+}
+
+void joc::adaugare_dlc(std::shared_ptr<DLC> dlc){
+    this->extensii.push_back(dlc->clone());
+}
+
+joc::~joc() {
 
 }

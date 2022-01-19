@@ -8,30 +8,33 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 #include "DLC.h"
 
 class joc {
     std::string name, genre, patch;
     float size; //Pret in RON si dimensiunea in GB
     int release_year, downloads;
-    std::vector<DLC> extensii;
+    std::vector<std::shared_ptr<DLC>> extensii;
     float price;
     int game_id;
+    static int game_idmax;
 public:
 
-    friend class utilizator;
+    virtual std::shared_ptr<joc> clone() const;
+
     //Constructorul fara parametri
     joc();
 
     //Constructorul cu parametri
     joc(const std::string &name, const std::string &genre, const std::string &patch, float size, int releaseYear,
-        int downloads, float price, int gameId);
+        int downloads, float price);
 
     //Constructorul de copiere
     joc(const joc &copie);
 
     //Destructor
-    ~joc();
+    virtual ~joc();
 
     //Operatorul egal
     joc &operator=(const joc &copie);
@@ -41,6 +44,12 @@ public:
     void sale(float procent_reducere);
 
     void actualizare(float dimensiune, std::string versiune);
+
+    float getPrice() const;
+
+    int getGameId() const;
+
+    void adaugare_dlc(std::shared_ptr<DLC> dlc);
 
     joc(int i);
 };
