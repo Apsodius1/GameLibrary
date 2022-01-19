@@ -43,13 +43,13 @@
 - [ ] moșteniri
   - [ ] funcții virtuale (pure)
   - [ ] apelarea constructorului din clasa de bază 
-  - [ ] smart pointers / pointeri normali și verificat să nu fie memory leaks
-- [ ] excepții
-  - [ ] predefinite
-  - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
-- [ ] funcții și atribute `static`
-- [ ] STL
+  - [x] smart pointers / pointeri normali și verificat să nu fie memory leaks
+- [x] excepții
+  - [x] predefinite
+  - [x] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
+  - [x] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
+- [x] funcții și atribute `static`
+- [x] STL
 - [ ] cât mai multe `const`
 - [ ] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
 - [ ] încă un tag de `git`: de exemplu `v0.2`
