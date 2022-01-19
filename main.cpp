@@ -3,6 +3,7 @@
 #include "joc.h"
 #include "utilizator.h"
 #include "skin.h"
+#include "lume.h"
 
 
 int main() {
@@ -49,16 +50,16 @@ int main() {
     catch (eroare_utilizator &eroare) {
         std::cout << eroare.what() << std::endl;
     }
-    DLC mcworld1("mcworld1",0,0);
-    DLC mcworld2("mcworld2",0,0);
-    DLC mcworld3("mcworld3",0,0);
-    DLC mcworld4("mcworld4",0,0);
-    DLC mcworld5("mcworld5",0,0);
-    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld2));
-    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld3));
-    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld4));
-    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld5));
-    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld1));
+    lume mcworld1("mcworld1",0,0,13);
+    lume mcworld2("mcworld2",0,0,20);
+    lume mcworld3("mcworld3",0,0,33);
+    lume mcworld4("mcworld4",0,0,55);
+    lume mcworld5("mcworld5",0,0,67);
+    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld2));
+    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld3));
+    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld4));
+    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld5));
+    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld1));
 
     skin srosu("srosu",8,0,"rosu");
     skin sgalben("sgalben",7,0,"galben");
