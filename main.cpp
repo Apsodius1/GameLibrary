@@ -6,7 +6,7 @@
 
 
 int main() {
-    try {
+
 
         joc Dota2("Dota 2", "MOBA", "7.30", 30, 2013, 110000, 0);
         joc Minecraft("Minecraft", "Sandbox", "1.17", 1.2, 2011, 20110, 115);
@@ -33,26 +33,48 @@ int main() {
         std::cout << P2;
         P2.schimbare_nume("Aug", "Hello world!");
 
+    try {
+        bot1.cumparare_joc(std::make_shared<joc>(RL));
+        bot1.cumparare_joc(std::make_shared<joc>(Minecraft));
+        bot1.cumparare_joc(std::make_shared<joc>(TFM));
+        bot1.cumparare_joc(std::make_shared<joc>(ETG));
+        std::cout << bot1 << std::endl;
         P2.cumparare_joc(std::make_shared<joc>(Minecraft));
-        std::cout << P2;
+        std::cout << P2 << std::endl;
 
 
     } catch (eroare_cumparare &eroare) {
-        std::cout << eroare.what();
+        std::cout << eroare.what() << std::endl;
     }
     catch (eroare_utilizator &eroare) {
-        std::cout << eroare.what();
+        std::cout << eroare.what() << std::endl;
     }
-    DLC dlc1;
-    std::cout << dlc1;
-    DLC dlc2("world", 25, 0);
-    dlc2.inflatie(0.3);
-    std::cout << dlc2;
-    DLC dlc3;
-    skin skin_smecher;
-    std::cout << skin_smecher;
-    skin_smecher.inflatie(0.1);
-    std::cout << skin_smecher;
+    DLC mcworld1("mcworld1",0,0);
+    DLC mcworld2("mcworld2",0,0);
+    DLC mcworld3("mcworld3",0,0);
+    DLC mcworld4("mcworld4",0,0);
+    DLC mcworld5("mcworld5",0,0);
+    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld2));
+    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld3));
+    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld4));
+    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld5));
+    Minecraft.adaugare_dlc(std::make_shared<DLC>(mcworld1));
 
+    skin srosu("srosu",8,0,"rosu");
+    skin sgalben("sgalben",7,0,"galben");
+    skin snegru("snegru",13,0,"negru");
+    skin sauriu("sauriu",100,0,"auriu");
+    skin sverde("sverdeu",9,0,"verde");
+    Dota2.adaugare_dlc(std::make_shared<skin>(srosu));
+    Dota2.adaugare_dlc(std::make_shared<skin>(sgalben));
+    Dota2.adaugare_dlc(std::make_shared<skin>(sverde));
+    Dota2.adaugare_dlc(std::make_shared<skin>(sauriu));
+    Dota2.adaugare_dlc(std::make_shared<skin>(snegru));
+
+    srosu.inflatie(0.1);
+    sgalben.inflatie(0.3);
+
+    std::cout<< srosu << " " << sgalben << std::endl;
+    std::cout << Dota2 << std::endl;
     return 0;
 }

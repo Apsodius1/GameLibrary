@@ -5,13 +5,13 @@
 #include "utilizator.h"
 
 
-utilizator::utilizator() : username("Player"), bio("-"), balance(0), games_owned(0) {}
+utilizator::utilizator() : username("Player"), bio("..."), balance(0), games_owned(0) {}
 
 utilizator::utilizator(std::string username, std::string bio, float balance, int gamesOwned)
         : username(std::move(username)), bio(std::move(bio)), balance(balance), games_owned(gamesOwned) {}
 
 std::ostream &operator<<(std::ostream &os, const utilizator &utilizator) {
-    os << " username: " << utilizator.username << " bio: " << utilizator.bio << " balance: " << utilizator.balance
+    os << " username: " << utilizator.username << " bio: '" << utilizator.bio << "' balance: " << utilizator.balance
        << " number games_owned: " << utilizator.games_owned.size() << std::endl;
     return os;
 }
