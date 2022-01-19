@@ -40,9 +40,9 @@
 
 #### Cerințe
 - [x] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [ ] moșteniri
-  - [ ] funcții virtuale (pure)
-  - [ ] apelarea constructorului din clasa de bază 
+- [x] moșteniri
+  - [x] funcții virtuale (pure)
+  - [x] apelarea constructorului din clasa de bază 
   - [x] smart pointers / pointeri normali și verificat să nu fie memory leaks
 - [x] excepții
   - [x] predefinite
@@ -51,7 +51,7 @@
 - [x] funcții și atribute `static`
 - [x] STL
 - [ ] cât mai multe `const`
-- [ ] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
+- [x] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
 - [ ] încă un tag de `git`: de exemplu `v0.2`
 
 ## Tema 3
