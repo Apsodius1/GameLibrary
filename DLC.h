@@ -12,8 +12,9 @@
 
 class DLC {
     std::string nume_dlc;
-    float pret;
     int nr_descarcari;
+protected:
+    float pret;
 
 public:
 
@@ -25,13 +26,12 @@ public:
     virtual ~DLC();
 
     //Constructorul cu parametri
-    DLC(const std::string &numeDlc, float pret, int nrDescarcari);
+    explicit DLC(const std::string &numeDlc, float pret, int nrDescarcari);
 
     //Stream output detector
     friend std::ostream &operator<<(std::ostream &os, const DLC &dlc);
 
     virtual void inflatie(float valoare_inflatie);
-
 };
 
 

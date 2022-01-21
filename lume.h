@@ -19,7 +19,9 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const lume &lume);
 
+    void inflatie(float valoare_inflatie) override;
 };
+
 
 
 #endif //UNTITLED_LUME_H

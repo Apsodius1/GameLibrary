@@ -13,3 +13,7 @@ std::ostream &operator<<(std::ostream &os, const lume &lume) {
     os << static_cast<const DLC &>(lume) << " dimensiune: " << lume.dimensiune;
     return os;
 }
+
+void lume::inflatie(float valoare_inflatie) {
+    this->pret = this->pret + this->pret * valoare_inflatie;
+}
