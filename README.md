@@ -52,7 +52,7 @@
 - [x] STL
 - [x] cât mai multe `const`
 - [x] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
-- [ ] încă un tag de `git`: de exemplu `v0.2`
+- [x] încă un tag de `git`: de exemplu `v0.2`
 
 ## Tema 3
 
@@ -64,7 +64,7 @@
 #### Cerințe
 - [x] 2 design patterns
 - [x] funcții și clase șablon (`template`)
-- [ ] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
+- [x] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
 
 ## Resurse
 
