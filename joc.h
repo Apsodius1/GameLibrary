@@ -19,6 +19,7 @@ class joc {
     float price;
     int game_id;
     static int game_idmax;
+    friend class Builder_joc;
 public:
 
     virtual std::shared_ptr<joc> clone() const;

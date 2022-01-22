@@ -4,35 +4,38 @@
 #include "utilizator.h"
 #include "skin.h"
 #include "lume.h"
+#include "factory.h"
+#include "masina.h"
+#include "Builder_joc.h"
 
 
 int main() {
 
 
-        joc Dota2("Dota 2", "MOBA", "7.30", 30, 2013, 110000, 0);
-        joc Minecraft("Minecraft", "Sandbox", "1.17", 1.2, 2011, 20110, 115);
-        joc RL("Rocket League", "Football", "2.07", 23.5, 2015, 100000, 100);
-        joc TFM("TeamFight Manager", "Strategy", "1.4.5", 0.3, 2020, 25000, 35);
-        joc ETG("Enter the Gungeon", "Bullet hell", "2.1.92", 2, 2016, 340000, 33);
+    joc Dota2("Dota 2", "MOBA", "7.30", 30, 2013, 110000, 0);
+    joc Minecraft("Minecraft", "Sandbox", "1.17", 1.2, 2011, 20110, 115);
+    joc RL("Rocket League", "Football", "2.07", 23.5, 2015, 100000, 100);
+    joc TFM("TeamFight Manager", "Strategy", "1.4.5", 0.3, 2020, 25000, 35);
+    joc ETG("Enter the Gungeon", "Bullet hell", "2.1.92", 2, 2016, 340000, 33);
 
 
-        Minecraft.sale(30);
-        Minecraft.actualizare(0.12, "1.173");
-        std::cout << Minecraft.getPrice();
-        RL.sale(100);
-        std::cout << RL;
+    Minecraft.sale(30);
+    Minecraft.actualizare(0.12, "1.173");
+    std::cout << Minecraft.getPrice();
+    RL.sale(100);
+    std::cout << RL;
 
-        utilizator bot1("BOT1", " I'm the first bot", 10000, 0);
-        utilizator bot2("BOT2", " I'm the second bot", 10000, 0);
-        utilizator bot3("BOT3", " I'm the third bot", 10000, 0);
-        utilizator bot4("BOT4", " I'm the fourth bot", 10000, 0);
-        utilizator bot5("BOT5", " I'm the fifth bot", 10000, 0);
-        utilizator bot6("BOT6", " I'm bot number 6", 10000, 0);
-        utilizator P1;
-        std::cout << P1;
-        utilizator P2("Augustin", "-", 0, 0);
-        std::cout << P2;
-        P2.schimbare_nume("Aug", "Hello world!");
+    utilizator bot1("BOT1", " I'm the first bot", 10000, 0);
+    utilizator bot2("BOT2", " I'm the second bot", 10000, 0);
+    utilizator bot3("BOT3", " I'm the third bot", 10000, 0);
+    utilizator bot4("BOT4", " I'm the fourth bot", 10000, 0);
+    utilizator bot5("BOT5", " I'm the fifth bot", 10000, 0);
+    utilizator bot6("BOT6", " I'm bot number 6", 10000, 0);
+    utilizator P1;
+    std::cout << P1;
+    utilizator P2("Augustin", "-", 0, 0);
+    std::cout << P2;
+    P2.schimbare_nume("Aug", "Hello world!");
 
     try {
         bot1.cumparare_joc(std::make_shared<joc>(RL));
@@ -50,22 +53,22 @@ int main() {
     catch (eroare_utilizator &eroare) {
         std::cout << eroare.what() << std::endl;
     }
-    lume mcworld1("mcworld1",0,0,13);
-    lume mcworld2("mcworld2",0,0,20);
-    lume mcworld3("mcworld3",0,0,33);
-    lume mcworld4("mcworld4",0,0,55);
-    lume mcworld5("mcworld5",0,0,67);
+    lume mcworld1("mcworld1", 0, 0, 13);
+    lume mcworld2("mcworld2", 0, 0, 20);
+    lume mcworld3("mcworld3", 0, 0, 33);
+    lume mcworld4("mcworld4", 0, 0, 55);
+    lume mcworld5("mcworld5", 0, 0, 67);
     Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld2));
     Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld3));
     Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld4));
     Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld5));
     Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld1));
 
-    skin srosu("srosu",8,0,"rosu");
-    skin sgalben("sgalben",7,0,"galben");
-    skin snegru("snegru",13,0,"negru");
-    skin sauriu("sauriu",100,0,"auriu");
-    skin sverde("sverdeu",9,0,"verde");
+    skin srosu("srosu", 8, 0, "rosu");
+    skin sgalben("sgalben", 7, 0, "galben");
+    skin snegru("snegru", 13, 0, "negru");
+    skin sauriu("sauriu", 100, 0, "auriu");
+    skin sverde("sverdeu", 9, 0, "verde");
     Dota2.adaugare_dlc(std::make_shared<skin>(srosu));
     Dota2.adaugare_dlc(std::make_shared<skin>(sgalben));
     Dota2.adaugare_dlc(std::make_shared<skin>(sverde));
@@ -75,7 +78,25 @@ int main() {
     srosu.inflatie(0.1);
     sgalben.inflatie(0.3);
 
-    std::cout<< srosu << " " << sgalben << std::endl;
+    std::cout << srosu << " " << sgalben << std::endl;
     std::cout << Dota2 << std::endl;
+
+    joc joca1 = factory::actiune();
+    joc jocm1 = factory::masini();
+    joc jocs1 = factory::strategie();
+    joc jocsa1 = factory::sandbox();
+    joc jocsi1 = factory::simulare();
+    std::cout << joca1 << std::endl << jocm1 << std::endl << jocs1 << std::endl << jocsa1 << std::endl << jocsi1
+              << std::endl;
+
+    masina<int> bmw("bmw", 13, 13, 13, 13, 13);
+    std::cout << bmw << std::endl;
+    masina<float> porsche("porsche", 13.5, 13, 13.5, 13.5, 13.5);
+    std::cout << porsche << std::endl;
+
+    Builder_joc jt;
+    joc joctest = jt.downloads(13).release_year(1999).genre("indie").patch("1.3").name("Joc smecher").price(
+            10000).build();
+    std::cout << joctest;
     return 0;
 }

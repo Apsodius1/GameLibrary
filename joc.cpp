@@ -4,7 +4,7 @@
 
 #include "joc.h"
 
-int joc::game_idmax = 0;
+int joc::game_idmax = 1;
 
 joc::joc() : name("?"), genre("game"), price(0), size(0), patch("0"), release_year(0), downloads(0), game_id(-1) {}
 

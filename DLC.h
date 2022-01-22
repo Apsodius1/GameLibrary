@@ -11,9 +11,10 @@
 #include <memory>
 
 class DLC {
+
+protected:
     std::string nume_dlc;
     int nr_descarcari;
-protected:
     float pret;
 
 public:

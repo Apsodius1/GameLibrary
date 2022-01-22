@@ -15,5 +15,5 @@ std::ostream &operator<<(std::ostream &os, const lume &lume) {
 }
 
 void lume::inflatie(float valoare_inflatie) {
-    this->pret = this->pret + this->pret * valoare_inflatie;
+    this->pret = this->pret + this->pret * valoare_inflatie * 2 ;
 }
