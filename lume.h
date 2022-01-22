@@ -9,7 +9,7 @@
 #include <ostream>
 #include "DLC.h"
 
-class lume : public DLC{
+class lume : public DLC {
 private:
     int dimensiune;
 public:
@@ -21,7 +21,6 @@ public:
 
     void inflatie(float valoare_inflatie) override;
 };
-
 
 
 #endif //UNTITLED_LUME_H

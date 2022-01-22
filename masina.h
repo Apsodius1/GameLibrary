@@ -8,17 +8,16 @@
 #include <iostream>
 #include "DLC.h"
 
-template <class T>
-        class masina;
+template<class T>
+class masina;
 
 
-template <class T>
-class masina : public DLC{
+template<class T>
+class masina : public DLC {
 private:
     T inaltime;
     T latime;
     T lungime;
-
 
 
 public:
@@ -29,7 +28,6 @@ public:
     void afisare();
 
 };
-
 
 
 #endif //UNTITLED_MASINA_H

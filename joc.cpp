@@ -72,7 +72,7 @@ std::shared_ptr<joc> joc::clone() const {
     return std::make_shared<joc>(*this);
 }
 
-void joc::adaugare_dlc(std::shared_ptr<DLC> dlc){
+void joc::adaugare_dlc(std::shared_ptr<DLC> dlc) {
     this->extensii.push_back(dlc->clone());
 }
 

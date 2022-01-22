@@ -9,12 +9,12 @@
 #include <ostream>
 #include "DLC.h"
 
-class skin : public DLC{
+class skin : public DLC {
 private:
     std::string culoare;
 public:
 
-skin();
+    skin();
 
     skin(const std::string &numeDlc, float pret, int nrDescarcari, const std::string &culoare);
 

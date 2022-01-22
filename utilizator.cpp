@@ -31,7 +31,6 @@ void utilizator::cumparare_joc(std::shared_ptr<joc> Joc) {
 }
 
 
-
 utilizator::~utilizator() {
 
 }
