@@ -94,6 +94,7 @@ int main() {
     masina<float> porsche("porsche", 13.5, 13, 13.5, 13.5, 13.5);
     std::cout << porsche << std::endl;
 
+
     Builder_joc jt;
     joc joctest = jt.downloads(13).release_year(1999).genre("indie").patch("1.3").name("Joc smecher").price(
             10000).build();
