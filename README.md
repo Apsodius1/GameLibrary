@@ -50,7 +50,7 @@
   - [x] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
 - [x] funcții și atribute `static`
 - [x] STL
-- [ ] cât mai multe `const`
+- [x] cât mai multe `const`
 - [x] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
 - [ ] încă un tag de `git`: de exemplu `v0.2`
 
@@ -62,8 +62,8 @@
 - săptămâna 12 (22-29 decembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [ ] 2 design patterns
-- [ ] funcții și clase șablon (`template`)
+- [x] 2 design patterns
+- [x] funcții și clase șablon (`template`)
 - [ ] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
 
 ## Resurse
