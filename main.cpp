@@ -83,11 +83,16 @@ int main() {
     lume mcworld3("mcworld3", 0, 0, 33);
     lume mcworld4("mcworld4", 0, 0, 55);
     lume mcworld5("mcworld5", 0, 0, 67);
-    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld2));
-    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld3));
-    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld4));
-    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld5));
-    Minecraft.adaugare_dlc(std::make_shared<lume>(mcworld1));
+    Minecraft.adaugare_dlc(mcworld2.clone());
+    Minecraft.adaugare_dlc(mcworld3.clone());
+    Minecraft.adaugare_dlc(mcworld4.clone());
+    Minecraft.adaugare_dlc(mcworld5.clone());
+    Minecraft.adaugare_dlc(mcworld1.clone());
+
+    skin steve("steve", 8, 0, "albastru");
+    skin girl("girl", 8, 0, "roz");
+    Minecraft.adaugare_dlc(steve.clone());
+    Minecraft.adaugare_dlc(girl.clone());
 
     skin srosu("srosu", 8, 0, "rosu");
     skin sgalben("sgalben", 7, 0, "galben");

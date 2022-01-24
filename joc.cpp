@@ -3,6 +3,7 @@
 //
 
 #include "joc.h"
+#include <algorithm>
 
 int joc::game_idmax = 1;
 
@@ -72,8 +73,17 @@ std::shared_ptr<joc> joc::clone() const {
     return std::make_shared<joc>(*this);
 }
 
-void joc::adaugare_dlc(std::shared_ptr<DLC> dlc) {
-    this->extensii.push_back(dlc->clone());
+void joc::adaugare_dlc(const std::shared_ptr<DLC> &dlc) {
+    this->extensii.push_back(dlc);
+}
+
+
+void joc::afisare_extensii() {
+    std::cout << "Jocul " << this->name << " are " << this->extensii.size() << " extensii: " << std::endl;
+    std::for_each(this->extensii.begin(), this->extensii.end(), [](const std::shared_ptr<DLC> &dlc) {
+        std::cout << " - " << *dlc;
+    });
+    std::cout << std::endl;
 }
 
 

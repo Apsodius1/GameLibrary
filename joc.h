@@ -52,7 +52,7 @@ public:
 
     int getGameId() const;
 
-    void adaugare_dlc(std::shared_ptr<DLC> dlc);
+    void adaugare_dlc(const std::shared_ptr<DLC> &dlc);
 
     joc(int i);
 
