@@ -15,6 +15,6 @@ std::ostream &operator<<(std::ostream &os, const skin &skin) {
     return os;
 }
 void skin::inflatie(float valoare_inflatie) {
-        this->pret = this->pret + this->pret * valoare_inflatie / 100;
+        this->pret = this->pret + this->pret * valoare_inflatie / 100; // pretul poate doar sa creasca
 
 }

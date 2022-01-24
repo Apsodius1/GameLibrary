@@ -23,7 +23,7 @@ void DLC::inflatie(float valoare_inflatie) {
     if(valoare_inflatie > 0)
     this->pret = this->pret + this->pret * valoare_inflatie / 100;
     else
-        this->pret =this->pret + this->pret * valoare_inflatie / 200;
+        this->pret =this->pret + this->pret * valoare_inflatie / 200; // pretul scade mai incet decat inflatia
 }
 
 DLC::~DLC() {

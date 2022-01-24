@@ -5,7 +5,7 @@
 #include "skin.h"
 #include "lume.h"
 #include "factory.h"
-#include "masina.h"
+#include "battlepass.h"
 #include "Builder_joc.h"
 
 
@@ -94,30 +94,30 @@ int main() {
     skin snegru("snegru", 13, 0, "negru");
     skin sauriu("sauriu", 100, 0, "auriu");
     skin sverde("sverdeu", 9, 0, "verde");
-    Dota2.adaugare_dlc((srosu).clone());
+    Dota2.adaugare_dlc(srosu.clone());
     Dota2.adaugare_dlc(sgalben.clone());
-    Dota2.adaugare_dlc((sverde.clone()));
-    Dota2.adaugare_dlc((sauriu.clone()));
-    Dota2.adaugare_dlc((snegru.clone()));
+    Dota2.adaugare_dlc(sverde.clone());
+    Dota2.adaugare_dlc(sauriu.clone());
+    Dota2.adaugare_dlc(snegru.clone());
 
     lume dotamap1("dotamap1", 0, 0, 12);
     lume dotamap2("dotamap2", 0, 0, 13);
     lume dotamap3("dotamap3", 0, 0, 14);
     lume dotamap4("dotamap4", 0, 0, 15);
     lume dotamap5("dotamap5", 0, 0, 16);
-    Dota2.adaugare_dlc((dotamap1.clone()));
-    Dota2.adaugare_dlc((dotamap2.clone()));
-    Dota2.adaugare_dlc((dotamap3.clone()));
-    Dota2.adaugare_dlc((dotamap4.clone()));
-    Dota2.adaugare_dlc((dotamap5.clone()));
+    Dota2.adaugare_dlc(dotamap1.clone());
+    Dota2.adaugare_dlc(dotamap2.clone());
+    Dota2.adaugare_dlc(dotamap3.clone());
+    Dota2.adaugare_dlc(dotamap4.clone());
+    Dota2.adaugare_dlc(dotamap5.clone());
+
+    std::cout << Dota2 << std::endl;
 
     std::cout << srosu << std::endl << sgalben << std::endl << ETGlume1 << std::endl;
     srosu.inflatie(-50);
     sgalben.inflatie(50);
     ETGlume1.inflatie(30);
-    std::cout << srosu << std::endl << sgalben << std::endl;
-
-    std::cout << Dota2 << std::endl;
+    std::cout << srosu << std::endl << sgalben << std::endl << ETGlume1 ;
 
     joc joca1 = factory::actiune();
     joc jocm1 = factory::masini();
@@ -127,10 +127,31 @@ int main() {
     std::cout << joca1 << std::endl << jocm1 << std::endl << jocs1 << std::endl << jocsa1 << std::endl << jocsi1
               << std::endl;
 
-    masina<int> bmw("bmw", 13, 13, 13, 13, 13);
-    std::cout << bmw << std::endl;
-    masina<float> porsche("porsche", 13.5, 13, 13.5, 13.5, 13.5);
-    std::cout << porsche << std::endl;
+    battlepass<int, std::string, std::string, std::string> compendium("Compendium", 100, 10000, 3, "reward2", "reward3",
+                                                                      "reward4");
+    compendium.inflatie(86.5);
+    std::cout << compendium << std::endl;
+    Dota2.adaugare_dlc(compendium.clone());
+
+    battlepass<int, int, std::string, std::string> ETGbp("ETGbp", 120, 10000, 3, 15, "reward3", "reward4");
+    ETGbp.inflatie(18.5);
+    std::cout << ETGbp << std::endl;
+    ETG.adaugare_dlc(ETGbp.clone());
+
+    battlepass<int, int, int, std::string> TFMbp("tfmbp", 135, 10000, 58, 83, 67, "reward4");
+    TFMbp.inflatie(33.67);
+    std::cout << TFMbp << std::endl;
+    ETG.adaugare_dlc(TFMbp.clone());
+
+    battlepass<int, int, int, int> RLbp("RLbp", 148, 10000, 100, 200, 300, 400);
+    RLbp.inflatie(89.9);
+    std::cout << RLbp << std::endl;
+    RL.adaugare_dlc(RLbp.clone());
+
+    battlepass<int, int, std::string, std::string> McBP("Mcbp", 396, 10000, 13, 155, "reward33", "reward44");
+    McBP.inflatie(18.5);
+    std::cout << McBP << std::endl;
+    Minecraft.adaugare_dlc(McBP.clone());
 
     Builder_joc jt;
     joc joctest = jt.downloads(13).release_year(1999).genre("indie").patch("1.3").name("Joc smecher").price(
