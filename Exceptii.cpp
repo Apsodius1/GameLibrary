@@ -4,6 +4,6 @@
 
 #include "Exceptii.h"
 
-eroare_utilizator::eroare_utilizator(const std::string &arg) : runtime_error("eroare utilizator:" + arg) {}
+eroare_utilizator::eroare_utilizator(const std::string &arg) : runtime_error(" eroare utilizator:" + arg) {}
 
-eroare_cumparare::eroare_cumparare() : eroare_utilizator("nu ai destule fonduri:") {}
+eroare_cumparare::eroare_cumparare() : eroare_utilizator(" nu ai destule fonduri\n") {}

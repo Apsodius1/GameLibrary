@@ -14,4 +14,7 @@ std::ostream &operator<<(std::ostream &os, const skin &skin) {
     os << static_cast<const DLC &>(skin) << " culoare: " << skin.culoare<<std::endl;
     return os;
 }
+void skin::inflatie(float valoare_inflatie) {
+        this->pret = this->pret + this->pret * valoare_inflatie / 100;
 
+}

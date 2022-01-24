@@ -46,7 +46,7 @@ std::ostream &operator<<(std::ostream &os, const joc &joc) {
 
 void joc::sale(float procent_reducere) {
     this->price = this->price - ((procent_reducere / 100) * this->price);
-    std::cout << this->name << " costa doar: " << this->price << "RON" << std::endl;
+    std::cout << this->name << " costa doar: " << this->price << " RON" << std::endl;
 }
 
 void joc::actualizare(float dimensiune, std::string versiune) {

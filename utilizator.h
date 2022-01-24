@@ -20,7 +20,7 @@ public:
     //Constructorul fara parametri
     utilizator();
 
-    virtual ~utilizator();
+    ~utilizator();
 
     //Constructorul cu parametri
     utilizator(std::string username, std::string bio, float balance, int gamesOwned);

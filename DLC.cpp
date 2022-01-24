@@ -3,6 +3,7 @@
 //
 
 #include "DLC.h"
+#include <bits/stdc++.h>
 
 std::shared_ptr<DLC> DLC::clone() const {
     return std::make_shared<DLC>(*this);
@@ -19,7 +20,10 @@ std::ostream &operator<<(std::ostream &os, const DLC &dlc) {
 }
 
 void DLC::inflatie(float valoare_inflatie) {
-    this->pret = this->pret + this->pret * valoare_inflatie;
+    if(valoare_inflatie > 0)
+    this->pret = this->pret + this->pret * valoare_inflatie / 100;
+    else
+        this->pret =this->pret + this->pret * valoare_inflatie / 200;
 }
 
 DLC::~DLC() {

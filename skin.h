@@ -20,6 +20,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const skin &skin);
 
+    void inflatie(float valoare_inflatie) override;
 };
 
 
