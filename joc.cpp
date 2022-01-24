@@ -77,6 +77,7 @@ void joc::adaugare_dlc(std::shared_ptr<DLC> dlc) {
 }
 
 
+
 joc::~joc() {
 
 }
