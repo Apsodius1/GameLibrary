@@ -76,6 +76,7 @@ void joc::adaugare_dlc(std::shared_ptr<DLC> dlc) {
     this->extensii.push_back(dlc->clone());
 }
 
+
 joc::~joc() {
 
 }

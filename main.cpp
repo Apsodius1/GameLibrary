@@ -117,7 +117,7 @@ int main() {
     srosu.inflatie(-50);
     sgalben.inflatie(50);
     ETGlume1.inflatie(30);
-    std::cout << srosu << std::endl << sgalben << std::endl << ETGlume1 ;
+    std::cout << srosu << std::endl << sgalben << std::endl << ETGlume1;
 
     joc joca1 = factory::actiune();
     joc jocm1 = factory::masini();
@@ -157,5 +157,8 @@ int main() {
     joc joctest = jt.downloads(13).release_year(1999).genre("indie").patch("1.3").name("Joc smecher").price(
             10000).build();
     std::cout << joctest;
+    Dota2.afisare_extensii();
+    RL.afisare_extensii();
+    ETG.afisare_extensii();
     return 0;
 }

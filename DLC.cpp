@@ -4,9 +4,6 @@
 
 #include "DLC.h"
 
-std::shared_ptr<DLC> DLC::clone() const {
-    return std::make_shared<DLC>(*this);
-}
 
 DLC::DLC() : nume_dlc("-"), pret(0), nr_descarcari(0) {}
 
@@ -19,12 +16,16 @@ std::ostream &operator<<(std::ostream &os, const DLC &dlc) {
 }
 
 void DLC::inflatie(float valoare_inflatie) {
-    if(valoare_inflatie > 0)
-    this->pret = this->pret + this->pret * valoare_inflatie / 100;
+    if (valoare_inflatie > 0)
+        this->pret = this->pret + this->pret * valoare_inflatie / 100;
     else
-        this->pret =this->pret + this->pret * valoare_inflatie / 200; // pretul scade mai incet decat inflatia
+        this->pret = this->pret + this->pret * valoare_inflatie / 200; // pretul scade mai incet decat inflatia
 }
 
 DLC::~DLC() {
 
+}
+
+std::shared_ptr<DLC> DLC::clone() const {
+    return std::make_shared<DLC>(*this);
 }

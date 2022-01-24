@@ -24,7 +24,7 @@ class joc {
 
 public:
 
-    virtual std::shared_ptr<joc> clone() const;
+    std::shared_ptr<joc> clone() const;
 
     //Constructorul fara parametri
     joc();
@@ -55,6 +55,10 @@ public:
     void adaugare_dlc(std::shared_ptr<DLC> dlc);
 
     joc(int i);
+
+    void afisare_extensii() const;
+
+
 };
 
 

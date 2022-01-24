@@ -21,6 +21,7 @@ public:
 
     virtual std::shared_ptr<DLC> clone() const;
 
+
     //Constructorul fara parametri
     DLC();
 
