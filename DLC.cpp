@@ -3,7 +3,6 @@
 //
 
 #include "DLC.h"
-#include <bits/stdc++.h>
 
 std::shared_ptr<DLC> DLC::clone() const {
     return std::make_shared<DLC>(*this);
