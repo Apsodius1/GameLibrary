@@ -56,7 +56,7 @@ public:
 
     joc(int i);
 
-    void afisare_extensii() ;
+    void afisare_extensii();
 
 
 };

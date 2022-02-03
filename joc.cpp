@@ -78,7 +78,7 @@ void joc::adaugare_dlc(const std::shared_ptr<DLC> &dlc) {
 }
 
 
-void joc::afisare_extensii() {
+ void joc::afisare_extensii() {
     std::cout << "Jocul " << this->name << " are " << this->extensii.size() << " extensii: " << std::endl;
     std::for_each(this->extensii.begin(), this->extensii.end(), [](const std::shared_ptr<DLC> &dlc) {
         std::cout << " - " << *dlc;

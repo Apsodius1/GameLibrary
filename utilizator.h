@@ -33,7 +33,9 @@ public:
 
     void cumparare_joc(std::shared_ptr<joc> Joc);
 
+    void afisare_jocuri();
 };
+
 
 
 #endif //UNTITLED_UTILIZATOR_H

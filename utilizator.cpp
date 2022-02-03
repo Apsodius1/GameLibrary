@@ -2,6 +2,7 @@
 // Created by User on 22-Dec-21.
 //
 
+#include <algorithm>
 #include "utilizator.h"
 
 
@@ -28,6 +29,13 @@ void utilizator::cumparare_joc(std::shared_ptr<joc> Joc) {
         this->balance = this->balance - Joc->getPrice();
     } else throw eroare_cumparare();
 
+}
+void utilizator::afisare_jocuri() {
+    std::cout << "Utilizatorul " << this->username << " are " << this->games_owned.size() << " jocuri: " << std::endl;
+    std::for_each(this->games_owned.begin(), this->games_owned.end(), [](const std::shared_ptr<joc> &joc) {
+        std::cout << " - " << *joc;
+    });
+    std::cout << std::endl;
 }
 
 

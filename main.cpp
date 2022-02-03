@@ -118,10 +118,16 @@ int main() {
 
     std::cout << Dota2 << std::endl;
 
+
+    DLC *dlcp = new DLC;
+
     std::cout << srosu << std::endl << sgalben << std::endl << ETGlume1 << std::endl;
-    srosu.inflatie(-50);
-    sgalben.inflatie(50);
-    ETGlume1.inflatie(30);
+    dlcp = &srosu;
+    dlcp->inflatie(-50);
+    dlcp = &sgalben;
+    dlcp->inflatie(50);
+    dlcp = &ETGlume1;
+    dlcp->inflatie(30);
     std::cout << srosu << std::endl << sgalben << std::endl << ETGlume1;
 
     joc joca1 = factory::actiune();
@@ -133,28 +139,35 @@ int main() {
               << std::endl;
 
     battlepass<int, std::string, std::string, std::string> compendium("Compendium", 100, 10000, 3, "reward2", "reward3",
+
                                                                       "reward4");
-    compendium.inflatie(86.5);
+    dlcp = &compendium;
+    dlcp->inflatie(86.5);
     std::cout << compendium << std::endl;
     Dota2.adaugare_dlc(compendium.clone());
 
     battlepass<int, int, std::string, std::string> ETGbp("ETGbp", 120, 10000, 3, 15, "reward3", "reward4");
-    ETGbp.inflatie(18.5);
+    dlcp = &ETGbp;
+    dlcp->inflatie(18.5);
     std::cout << ETGbp << std::endl;
     ETG.adaugare_dlc(ETGbp.clone());
 
     battlepass<int, int, int, std::string> TFMbp("tfmbp", 135, 10000, 58, 83, 67, "reward4");
-    TFMbp.inflatie(33.67);
+    dlcp = &TFMbp;
+    dlcp->inflatie(33.67);
     std::cout << TFMbp << std::endl;
     ETG.adaugare_dlc(TFMbp.clone());
 
     battlepass<int, int, int, int> RLbp("RLbp", 148, 10000, 100, 200, 300, 400);
-    RLbp.inflatie(89.9);
+    dlcp = &RLbp;
+    dlcp->inflatie(89.9);
     std::cout << RLbp << std::endl;
     RL.adaugare_dlc(RLbp.clone());
 
+
     battlepass<int, int, std::string, std::string> McBP("Mcbp", 396, 10000, 13, 155, "reward33", "reward44");
-    McBP.inflatie(18.5);
+    dlcp = &McBP;
+    dlcp->inflatie(18.5);
     std::cout << McBP << std::endl;
     Minecraft.adaugare_dlc(McBP.clone());
 
@@ -165,5 +178,8 @@ int main() {
     Dota2.afisare_extensii();
     RL.afisare_extensii();
     ETG.afisare_extensii();
+    bot1.afisare_jocuri();
+
+
     return 0;
 }
